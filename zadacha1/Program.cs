@@ -6,16 +6,23 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите день недели: ");
-            int num_day = Convert.ToInt32(Console.ReadLine());
-            if( num_day == 1) Console.WriteLine("Понедельник");
-            if( num_day == 2) Console.WriteLine("Вторник");
-            if( num_day == 3) Console.WriteLine("Среда");
-            if( num_day == 4) Console.WriteLine("Четверг");
-            if( num_day == 5) Console.WriteLine("Пятница");
-            if( num_day == 6) Console.WriteLine("Выходной");
-            if( num_day == 7) Console.WriteLine("Выходной");
-            if( num_day >  7) Console.WriteLine("НЕ число от 1 до 7");
+
+        Console.Write("Введи цифру, обозначающую день недели: ");
+        int dayNumber = Convert.ToInt32(Console.ReadLine());
+        void CheckingTheDayOfTheWeek (int dayNumber) 
+        {
+            if (dayNumber == 6 || dayNumber == 7) 
+            {
+                Console.WriteLine("(этот день выходной) -> да");
+            }
+            else if (dayNumber < 1 || dayNumber > 7) 
+            {
+                Console.WriteLine("это вообще не день недели");
+            }
+            else Console.WriteLine("(этот день не выходной) -> нет");
+        }
+
+        CheckingTheDayOfTheWeek(dayNumber);
         }
     }
 }
